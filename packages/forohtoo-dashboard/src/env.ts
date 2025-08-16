@@ -1,6 +1,8 @@
 import z from "zod";
 
 const envSchema = z.object({
+    COINBASE_DEVELOPER_PLATFORM_API_KEY: z.string(),
+    COINBASE_DEVELOPER_PLATFORM_SECRET:z.string(),
     RECEIVER_ADDRESS: z.string().transform((s, ctx) => {
         if (!s.startsWith("0x"))
             throw new z.ZodError([
