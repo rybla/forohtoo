@@ -35,6 +35,9 @@ bun run --filter "*" build
 Before __every__ commit, linting and building must succeed without any warnings or errors:
 
 ```sh
+# lint all packages
 bun run --filter "*" lint
+
+# build all packages
 bun run --filter "*" build
 ```
