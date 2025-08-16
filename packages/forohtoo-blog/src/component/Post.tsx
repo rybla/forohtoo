@@ -7,8 +7,23 @@ import { parsePost } from "@/post";
 import Markdown from "react-markdown";
 import path from "path";
 import { inputDirpath } from "forohtoo-common";
+import { Suspense } from "react";
 
-export default async function Post(props: { paid: boolean; id: string }) {
+type Props = {
+    paid: boolean;
+    id: string
+};
+
+// eslint-disable-next-line @typescript-eslint/require-await
+export default async function PostSuspense(props: Props) {
+    return (
+        <Suspense fallback={<div>Loading post ${props.id}</div>}>
+            <Post paid={props.paid} id={props.id} />
+        </Suspense>
+    )
+}
+
+async function Post(props: Props) {
     const post = await do_(async () => {
         try {
             const postText = await fs.readFile(
@@ -21,23 +36,25 @@ export default async function Post(props: { paid: boolean; id: string }) {
         }
     });
 
+    // this for testing, so I can see the loading animation briefly
     await sleep(500);
 
     return (
-        <div className={styles.Page}>
+        <div className={styles.Post}>
             {post === null ? (
-                <div>post does not exist</div>
+                <div className="nonexistent">post does not exist</div>
             ) : (
-                <div>
-                    <div>title: {post.metadata.title}</div>
-                    <div>
+                <>
+                    <div className={styles.title}>title: {post.metadata.title}</div>
+                    <div className={styles.date}>
                         published date:{" "}
                         {post.metadata.publishedDate.toDateString()}
                     </div>
-                    <div>tags: {post.metadata.tags.join(", ")}</div>
-                    <hr />
-                    <Markdown>{post.content}</Markdown>
-                </div>
+                    <div className={styles.tags}>tags: {post.metadata.tags.join(", ")}</div>
+                    <div className={styles.content}>
+                        <Markdown>{post.content}</Markdown>
+                    </div>
+                </>
             )}
         </div>
     );

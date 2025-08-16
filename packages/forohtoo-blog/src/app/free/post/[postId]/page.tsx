@@ -1,6 +1,7 @@
+"use server";
+
 import Header from "@/component/Header";
 import Post from "@/component/Post";
-import { Suspense } from "react";
 import styles from "./page.module.css";
 
 type Params = {
@@ -17,9 +18,7 @@ export default async function Page(props: Props) {
     return (
         <div className={styles.Page}>
             <Header subtitle={postId} />
-            <Suspense fallback={<div>🌀 Loading data...</div>}>
-                <Post paid={false} id={postId} />
-            </Suspense>
+            <Post paid={false} id={postId} />
         </div>
     );
 }
