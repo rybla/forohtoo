@@ -12,14 +12,15 @@ const compat = new FlatCompat({
 
 const eslintConfig = tseslint.config(
     ...compat.extends("next/core-web-vitals", "next/typescript"),
-    ...tseslint.configs.strict,
     {
         languageOptions: {
             parserOptions: {
-                tsconfigRootDir: "./",
+                projectService: true,
+                tsconfigRootDir: import.meta.dirname,
             }
         }
-    }
+    },
+    ...tseslint.configs.strictTypeChecked,
 );
 
 export default eslintConfig;
