@@ -13,13 +13,8 @@ export type Profile = {
     history: HistoryItem[]
 }
 
-export type TokenTransfer = {
-  contract_address: string;
-  from_address: string;
-  log_index: number;
-  to_address: string;
-  token_transfer_type: string;
-  value: string;
+export type HistoryItem = {
+  model: HistoryModel;
 };
 
 export type HistoryModel = {
@@ -54,8 +49,14 @@ export type HistoryModel = {
   unsigned_payload: string;
 };
 
-export type HistoryItem = {
-  model: HistoryModel;
+
+export type TokenTransfer = {
+  contract_address: string;
+  from_address: string;
+  log_index: number;
+  to_address: string;
+  token_transfer_type: string;
+  value: string;
 };
 
 export async function getProfile(): Promise<Profile> {
