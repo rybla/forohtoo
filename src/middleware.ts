@@ -1,14 +1,16 @@
 import { paymentMiddleware } from "x402-next";
-import { network, publicFacilitatorUrl, recieverAddress } from "../constant";
+import { network, publicFacilitatorUrl } from "../constant";
+import env from "./env";
 
 export const middleware = paymentMiddleware(
-    recieverAddress,
+    env.RECEIVER_ADDRESS,
     {
         "/paid": {
             price: "$0.001",
             network,
             config: {
-                description: "Access to paid content (this is the `config.description` in the middleware)",
+                description:
+                    "Access to paid content (this is the `config.description` in the middleware)",
             },
         },
     },
