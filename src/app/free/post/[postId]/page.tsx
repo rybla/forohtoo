@@ -1,7 +1,7 @@
+import Post from "@/component/Post";
 import { parsePost } from "@/post";
 import { do_ } from "@/utility";
 import * as fs from "fs/promises";
-import Markdown from "react-markdown";
 import styles from "./page.module.css";
 
 type Params = {
@@ -29,21 +29,9 @@ export default async function Page(props: Props) {
 
     return (
         <div className={styles.Page}>
-            <div>postId: {postId}</div>
+            <div>free postId: {postId}</div>
             <hr />
-            {post === null ? (
-                <div>post does not exist</div>
-            ) : (
-                <div>
-                    <div>title: {post.title}</div>
-                    <div>
-                        published date: {post.publishedDate.toDateString()}
-                    </div>
-                    <div>tags: {post.tags.join(", ")}</div>
-                    <hr />
-                    <Markdown>{post.content}</Markdown>
-                </div>
-            )}
+            <Post postId={postId} />
         </div>
     );
 }
