@@ -17,10 +17,18 @@ type Props = {
 // eslint-disable-next-line @typescript-eslint/require-await
 export default async function PostSuspense(props: Props) {
     return (
-        <Suspense fallback={<div>Loading post ${props.id}</div>}>
+        <Suspense
+            fallback={
+                <div className={styles.loader}>
+                    <div className={styles.bounce1}></div>
+                    <div className={styles.bounce2}></div>
+                    <div className={styles.bounce3}></div>
+                </div>
+            }
+        >
             <Post paid={props.paid} id={props.id} />
         </Suspense>
-    )
+    );
 }
 
 async function Post(props: Props) {
