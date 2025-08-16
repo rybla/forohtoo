@@ -10,16 +10,16 @@ const compat = new FlatCompat({
     baseDirectory: __dirname,
 });
 
-const eslintConfig = [
+const eslintConfig = tseslint.config(
     ...compat.extends("next/core-web-vitals", "next/typescript"),
-    ...tseslint.configs.strictTypeChecked,
+    ...tseslint.configs.strict,
     {
         languageOptions: {
             parserOptions: {
-                tsconfigRootDir: "./"
+                tsconfigRootDir: "./",
             }
         }
     }
-];
+);
 
 export default eslintConfig;

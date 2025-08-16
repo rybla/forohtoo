@@ -1,11 +1,11 @@
-"use server"
+"use server";
 
 import { getProfile } from '@/actions';
 import styles from './Profile.module.css';
 import Link from 'next/link';
 import Address from './Address';
 
-export default async function Profile(props: {}) {
+export default async function Profile() {
     const profile = await getProfile()
 
     return (

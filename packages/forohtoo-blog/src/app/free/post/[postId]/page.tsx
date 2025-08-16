@@ -1,10 +1,7 @@
-import Post from "@/component/Post";
-import { parsePost, readPost } from "@/post";
-import { do_ } from "@/utility";
-import * as fs from "fs/promises";
-import styles from "./page.module.css";
-import { Suspense } from "react";
 import Header from "@/component/Header";
+import Post from "@/component/Post";
+import { Suspense } from "react";
+import styles from "./page.module.css";
 
 type Params = {
     postId: string;

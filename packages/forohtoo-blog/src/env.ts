@@ -1,7 +1,7 @@
 import z from "zod";
 
 const envSchema = z.object({
-    RECEIVER_ADDRESS: z.string().transform((s, ctx) => {
+    RECEIVER_ADDRESS: z.string().transform((s) => {
         if (!s.startsWith("0x"))
             throw new z.ZodError([
                 {

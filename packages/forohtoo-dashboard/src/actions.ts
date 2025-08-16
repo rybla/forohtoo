@@ -1,13 +1,13 @@
 "use server";
 
-import { Address, Coinbase } from "@coinbase/coinbase-sdk";
-import { network } from "forohtoo-common";
-import env from "./env";
+// import { Address, Coinbase } from "@coinbase/coinbase-sdk";
+// import { network } from "forohtoo-common";
+// import env from "./env";
 
-Coinbase.configure({
-    apiKeyName: env.COINBASE_DEVELOPER_PLATFORM_API_KEY,
-    privateKey: env.COINBASE_DEVELOPER_PLATFORM_SECRET,
-});
+// Coinbase.configure({
+//     apiKeyName: env.COINBASE_DEVELOPER_PLATFORM_API_KEY,
+//     privateKey: env.COINBASE_DEVELOPER_PLATFORM_SECRET,
+// });
 
 export type Profile = {
     history: HistoryItem[]
@@ -58,10 +58,16 @@ export type HistoryItem = {
   model: HistoryModel;
 };
 
+// export async function getProfile(): Promise<Profile> {
+//     const address = new Address(network, env.RECEIVER_ADDRESS);
+//     let transactions = (await address.listTransactions({ limit: 10 })).data;
+//     return {
+//         history: JSON.parse(JSON.stringify(transactions))
+//     }
+// }
+
 export async function getProfile(): Promise<Profile> {
-    const address = new Address(network, env.RECEIVER_ADDRESS);
-    let transactions = (await address.listTransactions({ limit: 10 })).data;
     return {
-        history: JSON.parse(JSON.stringify(transactions))
+        history:[]
     }
 }

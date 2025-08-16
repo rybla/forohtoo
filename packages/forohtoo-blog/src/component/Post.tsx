@@ -16,7 +16,7 @@ export default async function Post(props: { paid: boolean; id: string }) {
                 "utf8",
             );
             return parsePost(props.paid, props.id, postText);
-        } catch (e) {
+        } catch {
             return null;
         }
     });

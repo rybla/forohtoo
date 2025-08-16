@@ -30,7 +30,7 @@ export async function readPost(
             "utf8",
         );
         return parsePost(paid, id, postText);
-    } catch (e) {
+    } catch {
         return null;
     }
 }

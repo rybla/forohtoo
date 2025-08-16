@@ -13,13 +13,13 @@ This project is a monorepo that has 3 packages (all in the `packages` directory)
 To run a development server that hosts the `forohtoo-blog`:
 
 ```sh
-bun run --filter "*-blog" dev
+bun run --filter "forohtoo-blog" dev
 ```
 
 To run a development server that hosts the `forohtoo-dashboard`:
 
 ```sh
-bun run --filter "*-dashboard" dev
+bun run --filter "forohtoo-dashboard" dev
 ```
 
 ## Building
@@ -27,5 +27,14 @@ bun run --filter "*-dashboard" dev
 To build all packages:
 
 ```sh
+bun run --filter "*" build
+```
+
+## Notes for Contributors
+
+Before __every__ commit, linting and building must succeed without any warnings or errors:
+
+```sh
+bun run --filter "*" lint
 bun run --filter "*" build
 ```
