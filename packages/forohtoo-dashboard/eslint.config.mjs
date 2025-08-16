@@ -1,6 +1,6 @@
 import { FlatCompat } from "@eslint/eslintrc";
 import { dirname } from "path";
-import tseslint, { ConfigArray } from "typescript-eslint";
+import tseslint from "typescript-eslint";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -10,7 +10,7 @@ const compat = new FlatCompat({
     baseDirectory: __dirname,
 });
 
-const eslintConfig: ConfigArray = [
+const eslintConfig = [
     ...compat.extends("next/core-web-vitals", "next/typescript"),
     ...tseslint.configs.strictTypeChecked,
     {

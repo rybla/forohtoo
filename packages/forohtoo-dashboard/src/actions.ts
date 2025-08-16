@@ -13,7 +13,7 @@ export type Profile = {
     history: HistoryItem[]
 }
 
-type TokenTransfer = {
+export type TokenTransfer = {
   contract_address: string;
   from_address: string;
   log_index: number;
@@ -58,7 +58,7 @@ export type HistoryItem = {
   model: HistoryModel;
 };
 
-export async function getProfile(args: {}): Promise<Profile> {
+export async function getProfile(): Promise<Profile> {
     const address = new Address(network, env.RECEIVER_ADDRESS);
     let transactions = (await address.listTransactions({ limit: 10 })).data;
     return {

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Address from './Address';
 
 export default async function Profile(props: {}) {
-    const profile = await getProfile({})
+    const profile = await getProfile()
 
     return (
         <div className={styles.profile}>
