@@ -27,11 +27,12 @@ export default async function Post(props: { paid: boolean; id: string }) {
                 <div>post does not exist</div>
             ) : (
                 <div>
-                    <div>title: {post.title}</div>
+                    <div>title: {post.metadata.title}</div>
                     <div>
-                        published date: {post.publishedDate.toDateString()}
+                        published date:{" "}
+                        {post.metadata.publishedDate.toDateString()}
                     </div>
-                    <div>tags: {post.tags.join(", ")}</div>
+                    <div>tags: {post.metadata.tags.join(", ")}</div>
                     <hr />
                     <Markdown>{post.content}</Markdown>
                 </div>

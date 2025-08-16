@@ -1,6 +1,6 @@
 ---
 title: This is Paid Post 1!
-publishedDate: August 16, 2025
+publishedDate: 2025-08-16
 tags:
     - example
     - paid

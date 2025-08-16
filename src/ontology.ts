@@ -3,7 +3,7 @@ import z from "zod";
 export type PostMetadata = z.infer<typeof PostMetadata>;
 export const PostMetadata = z.object({
     title: z.string(),
-    publishedDate: z.iso.date().transform((date) => new Date(date)),
+    publishedDate: z.date(),
     tags: z.array(z.string()),
 });
 
