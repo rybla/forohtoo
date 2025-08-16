@@ -1,4 +1,4 @@
-import { appName } from "@/constant";
+import { appName } from "forohtoo-common";
 import Link from "next/link";
 import styles from "./Header.module.css";
 

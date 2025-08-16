@@ -1,4 +1,4 @@
-import { network, publicFacilitatorUrl } from "@/constant";
+import { network, publicFacilitatorUrl } from "forohtoo-common";
 import { paymentMiddleware } from "x402-next";
 import env from "./env";
 

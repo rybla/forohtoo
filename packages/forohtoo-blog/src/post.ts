@@ -2,9 +2,10 @@ import matter from "gray-matter";
 import { Post, PostMetadata } from "./ontology";
 import * as fs from "fs/promises";
 import path from "path";
+import { inputDirpath } from "forohtoo-common";
 
 export async function readPosts(paid: boolean): Promise<Post[]> {
-    const postIds = await fs.readdir(`input/${paid ? "paid" : "free"}/post`, {
+    const postIds = await fs.readdir(path.join(inputDirpath, paid ? "paid" : "free", "post"), {
         recursive: false,
         encoding: "utf8",
     });
@@ -25,7 +26,7 @@ export async function readPost(
 ): Promise<Post | null> {
     try {
         const postText = await fs.readFile(
-            `input/${paid ? "paid" : "free"}/post/${id}.md`,
+            path.join(inputDirpath, paid ? "paid" : "free", "post", id + ".md"),
             "utf8",
         );
         return parsePost(paid, id, postText);

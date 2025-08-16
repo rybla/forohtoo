@@ -1,32 +1,17 @@
 {
   "name": "forohtoo",
-  "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@coinbase/x402": "^0.5.1",
-    "gray-matter": "^4.0.3",
-    "next": "15.4.6",
-    "react": "^19",
-    "react-dom": "^19",
-    "react-markdown": "^10.1.0",
-    "x402-fetch": "^0.5.1",
-    "x402-next": "^0.5.2",
-    "zod": "^4.0.17"
-  },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.4.6",
-    "typescript": "^5",
-    "typescript-eslint": "^8.39.1"
-  }
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "trustedDependencies": [
+    "@coinbase/x402",
+    "unrs-resolver"
+  ]
 }

@@ -5,12 +5,14 @@ import styles from "./Post.module.css";
 import * as fs from "fs/promises";
 import { parsePost } from "@/post";
 import Markdown from "react-markdown";
+import path from "path";
+import { inputDirpath } from "forohtoo-common";
 
 export default async function Post(props: { paid: boolean; id: string }) {
     const post = await do_(async () => {
         try {
             const postText = await fs.readFile(
-                `input/${props.paid ? "paid" : "free"}/post/${props.id}.md`,
+                path.join(inputDirpath, props.paid ? "paid" : "free", "post", props.id + ".md"),
                 "utf8",
             );
             return parsePost(props.paid, props.id, postText);
