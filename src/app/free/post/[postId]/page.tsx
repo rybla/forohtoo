@@ -3,6 +3,7 @@ import { parsePost } from "@/post";
 import { do_ } from "@/utility";
 import * as fs from "fs/promises";
 import styles from "./page.module.css";
+import { Suspense } from "react";
 
 type Params = {
     postId: string;
@@ -31,7 +32,9 @@ export default async function Page(props: Props) {
         <div className={styles.Page}>
             <div>free postId: {postId}</div>
             <hr />
-            <Post postId={postId} />
+            <Suspense fallback={<div>🌀 Loading data...</div>}>
+                <Post postId={postId} />
+            </Suspense>
         </div>
     );
 }
