@@ -1,0 +1,20 @@
+.container {
+    margin-top: 40px;
+}
+
+.rankedTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.rankedTable th,
+.rankedTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.rankedTable th {
+    background-color: #f2f2f2;
+}
