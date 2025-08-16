@@ -28,6 +28,10 @@ export default async function Home() {
                                 {post.metadata.title}
                             </Link>
                         </div>
+                        <div className={styles.sharesheet}>
+                            {/* TODO: copy link to clipboard */}
+                            <button>🔗</button>
+                        </div>
                         <div className={styles.publishedDate}>
                             {post.metadata.publishedDate.toDateString()}
                         </div>
