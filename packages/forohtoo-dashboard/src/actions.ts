@@ -66,6 +66,11 @@ export type TokenTransfer = {
 };
 
 export async function getProfile(): Promise<Profile> {
+    if (env.COINBASE_DEVELOPER_PLATFORM_API_KEY === "dummy_key") {
+        return {
+            history: []
+        }
+    }
     const address = new Address(network, env.RECEIVER_ADDRESS);
     const transactions = (await address.listTransactions({ limit: 1000 })).data;
     return {
