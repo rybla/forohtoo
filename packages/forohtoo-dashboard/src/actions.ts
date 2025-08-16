@@ -38,6 +38,9 @@ export type HistoryModel = {
     token_transfers: TokenTransfer[];
     transaction_access_list: unknown;
     type: number;
+    /**
+     * The amount of ETH sent in the transaction.
+     */
     value: string;
   };
   from_address_id: string;
@@ -56,6 +59,9 @@ export type TokenTransfer = {
   log_index: number;
   to_address: string;
   token_transfer_type: string;
+  /**
+   * The amount of tokens transferred.
+   */
   value: string;
 };
 
