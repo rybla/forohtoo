@@ -1,4 +1,4 @@
-"use server"
+"use server";
 
 import Header from "@/component/Header";
 import Profile from "@/component/Profile";

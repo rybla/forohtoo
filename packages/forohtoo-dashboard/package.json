@@ -12,8 +12,8 @@
     "@coinbase/coinbase-sdk": "^0.25.0",
     "forohtoo-common": "workspace:*",
     "next": "15.4.6",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "react": "^19",
+    "react-dom": "^19",
     "zod": "^4.0.17"
   },
   "devDependencies": {
