@@ -1,6 +1,6 @@
 ---
 title: This is Free Post 1!
-publishedDate: August 16, 2025
+publishedDate: August 15, 2025
 tags:
     - example
     - free

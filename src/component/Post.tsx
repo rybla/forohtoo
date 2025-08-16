@@ -6,14 +6,14 @@ import * as fs from "fs/promises";
 import { parsePost } from "@/post";
 import Markdown from "react-markdown";
 
-export default async function Post(props: { postId: string }) {
+export default async function Post(props: { paid: boolean; id: string }) {
     const post = await do_(async () => {
         try {
             const postText = await fs.readFile(
-                `input/free/post/${props.postId}.md`,
+                `input/${props.paid ? "paid" : "free"}/post/${props.id}.md`,
                 "utf8",
             );
-            return parsePost(postText);
+            return parsePost(props.paid, props.id, postText);
         } catch (e) {
             return null;
         }

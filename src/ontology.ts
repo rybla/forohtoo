@@ -1,4 +1,9 @@
 export type Post = {
+    paid: boolean;
+    /**
+     * The unique id of the post.
+     */
+    id: string;
     /**
      * Title of the post
      */

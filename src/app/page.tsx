@@ -1,13 +1,38 @@
-"use client";
+"use server";
 
-import Link from "next/link";
+import { readPosts } from "@/post";
 import styles from "./page.module.css";
+import Header from "@/component/Header";
+import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+    const freePosts = await readPosts(false);
+    const paidPosts = await readPosts(true);
+    const posts = [...freePosts, ...paidPosts];
+    posts.sort((x, y) => x.publishedDate.getTime() - y.publishedDate.getTime());
+
     return (
-        <div className={styles.page}>
-            <Link href="/paid">/paid</Link>
-            <Link href="/ssr-ex1">/ssr-ex1</Link>
+        <div className={styles.Page}>
+            <Header subtitle="index" />
+            <div className={styles.posts}>
+                {posts.map((post) => (
+                    <div className={styles.PostPreview} key={post.id}>
+                        <div className={styles.title}>
+                            <Link
+                                href={`/${post.paid ? "paid" : "free"}/post/${post.id}`}
+                            >
+                                {post.title}
+                            </Link>
+                        </div>
+                        <div className={styles.publishedDate}>
+                            {post.publishedDate.toDateString()}
+                        </div>
+                        <div className={styles.tags}>
+                            {post.tags.join(", ")}
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }
