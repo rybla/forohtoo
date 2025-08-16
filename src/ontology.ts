@@ -1,21 +1,25 @@
+import z from "zod";
+
+export type PostMetadata = z.infer<typeof PostMetadata>;
+export const PostMetadata = z.object({
+    title: z.string(),
+    publishedDate: z.iso.date().transform((date) => new Date(date)),
+    tags: z.array(z.string()),
+});
+
 export type Post = {
+    /**
+     * Whether or not the post is paid content
+     */
     paid: boolean;
     /**
      * The unique id of the post.
      */
     id: string;
     /**
-     * Title of the post
+     * Post metadata
      */
-    title: string;
-    /**
-     * Date that the post was published
-     */
-    publishedDate: Date;
-    /**
-     * Tags for categorizing the post
-     */
-    tags: string[];
+    metadata: PostMetadata;
     /**
      * Markdown content of the post
      */

@@ -9,7 +9,11 @@ export default async function Home() {
     const freePosts = await readPosts(false);
     const paidPosts = await readPosts(true);
     const posts = [...freePosts, ...paidPosts];
-    posts.sort((x, y) => x.publishedDate.getTime() - y.publishedDate.getTime());
+    posts.sort(
+        (x, y) =>
+            x.metadata.publishedDate.getTime() -
+            y.metadata.publishedDate.getTime(),
+    );
 
     return (
         <div className={styles.Page}>
@@ -21,14 +25,14 @@ export default async function Home() {
                             <Link
                                 href={`/${post.paid ? "paid" : "free"}/post/${post.id}`}
                             >
-                                {post.title}
+                                {post.metadata.title}
                             </Link>
                         </div>
                         <div className={styles.publishedDate}>
-                            {post.publishedDate.toDateString()}
+                            {post.metadata.publishedDate.toDateString()}
                         </div>
                         <div className={styles.tags}>
-                            {post.tags.join(", ")}
+                            {post.metadata.tags.join(", ")}
                         </div>
                     </div>
                 ))}

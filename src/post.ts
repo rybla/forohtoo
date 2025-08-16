@@ -1,5 +1,5 @@
 import matter from "gray-matter";
-import { Post } from "./ontology";
+import { Post, PostMetadata } from "./ontology";
 import * as fs from "fs/promises";
 import path from "path";
 
@@ -42,29 +42,11 @@ export async function readPost(
 export function parsePost(paid: boolean, id: string, s: string): Post | null {
     try {
         const { data, content } = matter(s);
-
-        if (
-            !data ||
-            typeof data.title !== "string" ||
-            !data.publishedDate ||
-            !Array.isArray(data.tags)
-        ) {
-            return null;
-        }
-
-        const publishedDate = new Date(data.publishedDate);
-        if (isNaN(publishedDate.getTime())) {
-            return null;
-        }
-
+        const metadata = PostMetadata.parse(data);
         const post: Post = {
             paid,
             id,
-            title: data.title,
-            publishedDate,
-            tags: data.tags.filter(
-                (tag): tag is string => typeof tag === "string",
-            ),
+            metadata,
             content: content.trim(),
         };
 
