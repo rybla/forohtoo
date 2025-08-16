@@ -1,0 +1,19 @@
+.from_address_ranking {
+    margin-top: 20px;
+}
+
+.from_address_ranking table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.from_address_ranking th,
+.from_address_ranking td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.from_address_ranking th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
