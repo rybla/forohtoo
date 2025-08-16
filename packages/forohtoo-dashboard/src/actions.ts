@@ -67,7 +67,7 @@ export type TokenTransfer = {
 
 export async function getProfile(): Promise<Profile> {
     const address = new Address(network, env.RECEIVER_ADDRESS);
-    const transactions = (await address.listTransactions({ limit: 10 })).data;
+    const transactions = (await address.listTransactions({ limit: 1000 })).data;
     return {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         history: JSON.parse(JSON.stringify(transactions))
