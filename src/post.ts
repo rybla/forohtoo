@@ -1,23 +1,5 @@
 import matter from "gray-matter";
-
-export type Post = {
-    /**
-     * Title of the post
-     */
-    title: string;
-    /**
-     * Date that the post was published
-     */
-    publishedDate: Date;
-    /**
-     * Tags for categorizing the post
-     */
-    tags: string[];
-    /**
-     * Markdown content of the post
-     */
-    content: string;
-};
+import { Post } from "./ontology";
 
 /**
  * Parses the raw string from reading the markdown file of a post into {@link Post} form.
