@@ -42,7 +42,7 @@ async function Post(props: Props) {
     return (
         <div className={styles.Post}>
             {post === null ? (
-                <div className="nonexistent">post does not exist</div>
+                <div className="nonexistent">The post {props.id} does not exist!</div>
             ) : (
                 <>
                     <div className={styles.title}>title: {post.metadata.title}</div>
