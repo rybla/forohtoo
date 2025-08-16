@@ -13,6 +13,8 @@ const envSchema = z.object({
             ]);
         return s as `0x${string}`;
     }),
+    COINBASE_DEVELOPER_PLATFORM_API_KEY: z.string(),
+    COINBASE_DEVELOPER_PLATFORM_SECRET: z.string(),
 });
 
 export const env = envSchema.parse(process.env);
