@@ -8,10 +8,12 @@ export const middleware = paymentMiddleware(
         "/paid": {
             price: "$0.001",
             network,
-            config: {
-                description:
-                    "Access to paid content (this is the `config.description` in the middleware)",
-            },
+            config: { description: "Access to paid content" },
+        },
+        "/paid/post/*": {
+            price: "$0.001",
+            network,
+            config: { description: "Access to paid post" },
         },
     },
     {
