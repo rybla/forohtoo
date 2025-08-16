@@ -10,6 +10,8 @@ export default function Header(props: { subtitle: string }) {
             </div>
             <div className={styles.separator}>{"|"}</div>
             <div className={styles.subtitle}>{props.subtitle}</div>
+            <div className={styles.separator}>{"|"}</div>
+            <div className={styles.subtitle}><Link href="/about">about</Link></div>
         </div>
     );
 }
