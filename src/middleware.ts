@@ -1,5 +1,5 @@
 import { paymentMiddleware } from "x402-next";
-import { network, publicFacilitatorUrl } from "../constant";
+import { network, publicFacilitatorUrl } from "@/constant";
 import env from "./env";
 
 export const middleware = paymentMiddleware(

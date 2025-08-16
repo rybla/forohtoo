@@ -7,6 +7,7 @@ export default function Home() {
     return (
         <div className={styles.page}>
             <Link href="/paid">/paid</Link>
+            <Link href="/ssr-ex1">/ssr-ex1</Link>
         </div>
     );
 }
