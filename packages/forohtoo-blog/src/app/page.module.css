@@ -1,6 +1,66 @@
-.page {
-    padding: 2em;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+.Page {
+    padding: 2em 4em;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin: 2em;
+}
+
+.posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2em;
+}
+
+.PostPreview {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.PostPreview:hover {
+    transform: translateY(-10px);
+}
+
+.title a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.publishedDate {
+    font-size: 0.8em;
+    margin-top: 10px;
+    color: #eee;
+}
+
+.tags {
+    margin-top: 10px;
+}
+
+.tags span {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 0.9em;
+    margin-right: 5px;
+}
+
+.sharesheet button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.sharesheet button:hover {
+    color: #23d5ab;
 }
