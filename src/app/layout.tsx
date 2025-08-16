@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
     title: "forohtoo",
-    description: "A website for publishing blogs that get you tips.",
+    description: "A blogging platform that uses x402 to faciliate paid content.",
 };
 
 export default function RootLayout({
