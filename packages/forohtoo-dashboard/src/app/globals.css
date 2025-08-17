@@ -6,7 +6,8 @@ html {
 body {
     margin: 0;
     padding: 0;
-
     min-height: 100vh;
     min-width: 100vw;
+    background: linear-gradient(to right, #83a4d4, #b6fbff);
+    color: white;
 }
