@@ -3,7 +3,7 @@ import z from "zod";
 const envSchema = z.union([
     z.object({
         TEST: z.literal("true"),
-    }),
+    }).loose(),
     z.object({
         TEST: z.literal("false"),
         COINBASE_DEVELOPER_PLATFORM_API_KEY: z.string(),
@@ -19,7 +19,7 @@ const envSchema = z.union([
                 ]);
             return s as `0x${string}`;
         }),
-    })
+    }).loose()
 ])
 
 export const env = envSchema.parse(process.env);

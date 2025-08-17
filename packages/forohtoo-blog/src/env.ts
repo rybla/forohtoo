@@ -16,11 +16,13 @@ const envSchema = z.union([
     z.object({
         TEST: z.literal("true"),
         RECEIVER_ADDRESS: RECEIVER_ADDRESS,
-    }),
+        COINBASE_DEVELOPER_PLATFORM_CLIENT_PUBLIC_KEY: z.string(),
+    }).loose(),
     z.object({
         TEST: z.literal("false"),
         RECEIVER_ADDRESS: RECEIVER_ADDRESS,
-    })
+        COINBASE_DEVELOPER_PLATFORM_CLIENT_PUBLIC_KEY: z.string(),
+    }).loose()
 ])
 
 export const env = envSchema.parse(process.env);

@@ -10,7 +10,9 @@
     "check": "tsc --noEmit"
   },
   "dependencies": {
+    "@coinbase/onchainkit": "^0.38.19",
     "@coinbase/x402": "^0.5.1",
+    "forohtoo-common": "workspace:*",
     "gray-matter": "^4.0.3",
     "next": "15.4.6",
     "react": "^19",
@@ -18,8 +20,7 @@
     "react-markdown": "^10.1.0",
     "x402-fetch": "^0.5.1",
     "x402-next": "^0.5.2",
-    "zod": "^4.0.17",
-    "forohtoo-common": "workspace:*"
+    "zod": "^4.0.17"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
