@@ -32,20 +32,12 @@ bun run --filter "*" build
 
 ## Notes for Contributors
 
-### Environment Variables
-
-You will need to initialize the following `.env` files. You can fill them with dummy values if just for testing. Look at their corresponding `env.ts` files to see what fields are required.
-- `packages/forohtoo-dashboard/.env`
-- `packages/forohtoo-blog/.env`
-
 ### Committing
 
-Before __every__ commit, linting and building must succeed without any warnings or errors:
+Before **every** commit, make sure that running the script `build-check.sh` succeeds witout any warnings or errors.
 
 ```sh
-# lint all packages
-bun run --filter "*" lint
-
-# build all packages
-bun run --filter "*" build
+./build-check.sh
 ```
+
+Any errors or warnings that are generated from running `build-check.sh` **must** be addressed before commiting changes.

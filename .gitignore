@@ -4,9 +4,12 @@ node_modules
 # next
 .next/
 next-env.d.ts
+*.tsbuildinfo
 
 # secret
-.env*
+.env
+.env.production
+.env.development
 
 # misc
 .DS_Store

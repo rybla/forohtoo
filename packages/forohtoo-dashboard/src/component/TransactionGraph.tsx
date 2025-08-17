@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { HistoryItem } from '@/actions';
+import type { HistoryItem } from '@/actions';
 import { Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,

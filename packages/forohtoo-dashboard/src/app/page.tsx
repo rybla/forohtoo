@@ -1,5 +1,3 @@
-"use server";
-
 import Header from "@/component/Header";
 import Profile from "@/component/Profile";
 import styles from "./page.module.css";

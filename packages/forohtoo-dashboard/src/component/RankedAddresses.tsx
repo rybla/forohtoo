@@ -1,6 +1,6 @@
 "use client";
 
-import { HistoryItem } from '@/actions';
+import type { HistoryItem } from '@/actions';
 import Address from './Address';
 import styles from './RankedAddresses.module.css';
 

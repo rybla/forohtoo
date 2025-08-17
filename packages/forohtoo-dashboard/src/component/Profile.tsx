@@ -1,11 +1,11 @@
-"use server";
-
 import { getProfile } from '@/actions';
 import styles from './Profile.module.css';
 import Link from 'next/link';
 import Address from './Address';
 import TransactionGraph from './TransactionGraph';
 import RankedAddresses from './RankedAddresses';
+
+export const dynamic = 'force-dynamic';
 
 export default async function Profile() {
     const profile = await getProfile();

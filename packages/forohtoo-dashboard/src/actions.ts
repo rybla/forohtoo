@@ -4,11 +4,11 @@ import { Address, Coinbase } from "@coinbase/coinbase-sdk";
 import { network } from "forohtoo-common";
 import env from "./env";
 
-Coinbase.configure({
+if (env.TEST === "false") {Coinbase.configure({
     apiKeyName: env.COINBASE_DEVELOPER_PLATFORM_API_KEY,
     privateKey: env.COINBASE_DEVELOPER_PLATFORM_SECRET,
 });
-
+}
 export type Profile = {
     history: HistoryItem[]
 }
@@ -66,6 +66,12 @@ export type TokenTransfer = {
 };
 
 export async function getProfile(): Promise<Profile> {
+    if (env.TEST === "true") {
+        return {
+            history: []
+        }
+    }
+
     const address = new Address(network, env.RECEIVER_ADDRESS);
     const transactions = (await address.listTransactions({ limit: 1000 })).data;
     return {
