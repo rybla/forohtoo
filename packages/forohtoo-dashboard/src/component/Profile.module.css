@@ -1,22 +1,29 @@
 .profile {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
     padding: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .transactionTable {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    color: white;
 }
 
 .transactionTable th,
 .transactionTable td {
-    border: 1px solid #ddd;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 8px;
     text-align: left;
 }
 
 .transactionTable th {
-    background-color: #f2f2f2;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .tokenTransferList {
@@ -26,7 +33,7 @@
 }
 
 .tokenTransferList li {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding: 5px 0;
 }
 

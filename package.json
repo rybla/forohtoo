@@ -12,7 +12,13 @@
   ],
   "trustedDependencies": [
     "@coinbase/x402",
-    "unrs-resolver"
+    "bigint-buffer",
+    "bufferutil",
+    "keccak",
+    "secp256k1",
+    "sharp",
+    "unrs-resolver",
+    "utf-8-validate"
   ],
   "dependencies": {
     "chart.js": "^4.5.0",
