@@ -8,7 +8,9 @@ export default async function Home() {
     return (
         <div className={styles.Page}>
             <Header subtitle="index"/>
-            <Profile/>
+            <div className={styles.posts}>
+                <Profile/>
+            </div>
         </div>
     );
 }
