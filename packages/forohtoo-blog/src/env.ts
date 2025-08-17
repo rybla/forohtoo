@@ -22,6 +22,7 @@ const envSchema = z.union([
         TEST: z.literal("false"),
         RECEIVER_ADDRESS: RECEIVER_ADDRESS,
         COINBASE_DEVELOPER_PLATFORM_CLIENT_PUBLIC_KEY: z.string(),
+        SENDER_PRIVATE_KEY: z.string(),
     }).loose()
 ])
 
