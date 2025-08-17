@@ -2,7 +2,7 @@
 
 import Header from "@/component/Header";
 import Post from "@/component/Post";
-import styles from "./page.module.css";
+import styles from "../../../post.module.css";
 
 type Params = {
     postId: string;
@@ -18,7 +18,9 @@ export default async function Page(props: Props) {
     return (
         <div className={styles.Page}>
             <Header subtitle={postId} />
-            <Post paid={true} id={postId} />
+            <div className={styles.PostContainer}>
+                <Post paid={true} id={postId} />
+            </div>
         </div>
     );
 }
