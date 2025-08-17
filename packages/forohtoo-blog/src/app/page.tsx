@@ -11,8 +11,8 @@ export default async function Home() {
     const posts = [...freePosts, ...paidPosts];
     posts.sort(
         (x, y) =>
-            x.metadata.publishedDate.getTime() -
-            y.metadata.publishedDate.getTime(),
+            y.metadata.publishedDate.getTime() -
+            x.metadata.publishedDate.getTime(),
     );
 
     return (
