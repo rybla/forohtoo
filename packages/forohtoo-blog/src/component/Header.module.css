@@ -1,6 +1,7 @@
 .Header {
     display: flex;
     align-items: center;
+    flex-direction: row;
     padding: 1rem 2rem;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
@@ -11,6 +12,7 @@
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     color: white;
+    margin-bottom: 1rem;
 }
 
 @keyframes gradient {
