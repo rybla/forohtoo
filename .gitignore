@@ -13,3 +13,7 @@ next-env.d.ts
 
 # misc
 .DS_Store
+
+# personal scripts
+dev-blog.sh
+dev-dashboard.sh
